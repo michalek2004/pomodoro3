@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"  href="styles.css"></styles>
+</head>
+<body class="bg-white text-black flex flex-col h-screen">
+<div id='navigation' class="bg-black text-white flex justify-between items-center p-4">
+    <h1 class="text-xl font-bold">Pomodoro App</h1>
+    <div id="forBtns" class="forBtns">
+        <button id="statistics" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg">Statistics</button>
+        <button id="loginBtn" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg">Login</button>
+        <button id="register" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg">Register</button>
+        <button class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg ml-2">Donate</button>
+    </div>
+</div>
+
+<div class="flex-grow flex items-center justify-center">
+    <div id="outerCircle">
+        <div class="circle" id="progressCircle">
+            <div class="timer-display" id="timer">25:00</div>
+            <div class="controls">
+                <button id="start" class="btnInCounter px-3 py-1 rounded-lg hover:bg-gray-200 transition duration-200">Start</button>
+                <button id="stop" class="btnInCounter px-3 py-1 rounded-lg hover:bg-gray-200 transition duration-200">Stop</button>
+                <button id="reset" class="btnInCounter px-3 py-1 rounded-lg hover:bg-gray-200 transition duration-200">Reset</button>
+            </div>
+            <div class="stats">
+                <div>
+                    <h2>Sessions Today</h2>
+                    <p id="sessions" class="text-xl">0</p>
+                </div>
+                <!-- <div>
+                    <h2>Breaks</h2>
+                    <p id="breaks" class="text-xl">0</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-gray-200 p-4 text-center">
+    <h2 class="text-xl font-semibold">Pomodoros This Month</h2>
+    <p id="pomodoros-count" class="text-2xl">0</p>
+</div>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="cursor-pointer float-right text-gray-500">&times;</span>
+        <h2 class="text-xl font-semibold mb-4">Login</h2>
+        <input type="email" id="emailLogin" placeholder="Email" class="border border-gray-300 rounded-lg p-2 mb-4 w-full" required>
+        <input type="password" id="passwordLogin" placeholder="Password" class="border border-gray-300 rounded-lg p-2 mb-4 w-full" required>
+        <div id="passwordLoginDiv" class="passwordLoginInvisible">Password cannot be empty</div>
+        <button id="submitLogin" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition duration-200 w-full">Submit</button>
+    </div>
+</div>
+
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModalRegister" class="cursor-pointer float-right text-gray-500">&times;</span>
+        <h2 class="text-xl font-semibold mb-4">Register</h2>
+        <input type="email" id="emailRegister" placeholder="Email" class="border border-gray-300 rounded-lg p-2 mb-4 w-full" required>
+        <div class="relative">
+            <input type="password" id="password1" placeholder="Password" class="passwordRegister border border-gray-300 rounded-lg p-2 mb-4 w-full pr-10" required>
+            <i id="togglePassword1" class="fas fa-eye absolute top-2 right-3 cursor-pointer"></i>
+        </div>
+        <div class="relative">
+            <input type="password" id="password2" placeholder="Confirm Password" class="passwordRegister border border-gray-300 rounded-lg p-2 mb-4 w-full pr-10" required>
+            <i id="togglePassword2" class="fas fa-eye absolute top-2 right-3 cursor-pointer"></i>
+        </div>
+        <div id="passwordError" style="color: red; display: none;">Passwords do not match</div>
+        <button id="submitRegister" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition duration-200 w-full">Create an account</button>                      
+    </div>
+</div>
+<div class="statsInvisible" id="modal2">
+    <div class="month-switcher">
+        <button id="prevMonth">&#8249;</button>
+        <h2 id="currentMonth">February 2025</h2>
+        <button id="nextMonth">&#8250;</button>
+    </div>
+    <div class="calendar" id="calendar">
+    </div>
+    <div id="closeStats">
+        X
+    </div>
+</div>
+<!-- <img src="pomdoro.png" class="pomodoroImg" alt="Pomodoro"> -->
+<script src="script.js">
+</script>
+</body>
+</html>
+
+<!-- 
+Tworzenie konta
+Sprawdzanie czy konto na dany email jest juz utworzone 
+Przypominanie hasła
+Ikona dla wyswietlenia hasła 
+Loading the user history of Pomodoro
+ -->
