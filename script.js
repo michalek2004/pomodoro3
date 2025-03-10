@@ -1,3 +1,4 @@
+console.log(1003)
 let outerCircle = document.getElementById('outerCircle')
 let timer;
 let isRunning = false;
